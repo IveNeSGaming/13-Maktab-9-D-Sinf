@@ -14,37 +14,43 @@ const students = [
     { raqam: 12, ism: 'Durdona', familya: 'Meliyeva', tugulgan_kun: '31.08.2009' },
     { raqam: 13, ism: 'Shohjahon', familya: 'Musurmonov ', tugulgan_kun: '29.01.2009' },
     { raqam: 14, ism: 'Bibigul', familya: 'Muxtorova', tugulgan_kun: '09.05.2009' },
-    { raqam: 15, ism: 'Suhrob', familya: 'O\'ktamov', tugulgan_kun: '09.11.2009' },
-    { raqam: 16, ism: 'Sarvara', familya: 'O\'ktamova ', tugulgan_kun: '30.01.2009' },
-    { raqam: 17, ism: 'Odina', familya: 'Odilova', tugulgan_kun: '22.01.2010' },
-    { raqam: 18, ism: 'Gulbahor', familya: 'O\'ktamova ', tugulgan_kun: '21.03.2010' },
-    { raqam: 19, ism: 'Ulug\'bek', familya: 'Po\'latov', tugulgan_kun: '10.09.2009' },    
-    { raqam: 20, ism: 'Islombek', familya: 'Suyarqulov', tugulgan_kun: '08.10.2009' },
-    { raqam: 21, ism: 'Munisa', familya: 'Suyunboyeva', tugulgan_kun: '19.01.2009' },
-    { raqam: 22, ism: 'Shoxruz', familya: 'Tursunpulotov', tugulgan_kun: '26.01.2010' },
-    { raqam: 23, ism: 'Diana', familya: 'Urdusheva', tugulgan_kun: '26.07.2009' },
-    { raqam: 24, ism: 'Asilbek', familya: 'Xolmo\'minov', tugulgan_kun: '02.11.2009' },
-    { raqam: 25, ism: 'Alijon', familya: 'Xudoyberdiyev', tugulgan_kun: '22.04.2009' },
-    { raqam: 26, ism: 'Go\'zal', familya: 'Yo\'ldosheva', tugulgan_kun: '18.04.2010' },
-    { raqam: 27, ism: 'Izzat', familya: 'Zokirov', tugulgan_kun: '27.03.2009' },
-    { raqam: 28, ism: 'Adizjon', familya: 'Sharipov ', tugulgan_kun: '02.07.2009' },
+    { raqam: 15, ism: 'Odina', familya: 'Uktamova', tugulgan_kun: '29.08.2008' },
+    { raqam: 16, ism: 'Suhrob', familya: 'O\'ktamov', tugulgan_kun: '09.11.2009' },
+    { raqam: 17, ism: 'Sarvara', familya: 'O\'ktamova ', tugulgan_kun: '30.01.2009' },
+    { raqam: 18, ism: 'Odina', familya: 'Odilova', tugulgan_kun: '22.01.2010' },
+    { raqam: 19, ism: 'Gulbahor', familya: 'O\'ktamova ', tugulgan_kun: '21.03.2010' },
+    { raqam: 20, ism: 'Ulug\'bek', familya: 'Po\'latov', tugulgan_kun: '10.09.2009' },    
+    { raqam: 21, ism: 'Islombek', familya: 'Suyarqulov', tugulgan_kun: '08.10.2009' },
+    { raqam: 22, ism: 'Munisa', familya: 'Suyunboyeva', tugulgan_kun: '19.01.2009' },
+    { raqam: 23, ism: 'Shoxruz', familya: 'Tursunpulotov', tugulgan_kun: '26.01.2010' },
+    { raqam: 24, ism: 'Diana', familya: 'Urdusheva', tugulgan_kun: '26.07.2009' },
+    { raqam: 25, ism: 'Asilbek', familya: 'Xolmo\'minov', tugulgan_kun: '02.11.2009' },
+    { raqam: 26, ism: 'Alijon', familya: 'Xudoyberdiyev', tugulgan_kun: '22.04.2009' },
+    { raqam: 27, ism: 'Go\'zal', familya: 'Yo\'ldosheva', tugulgan_kun: '18.04.2010' },
+    { raqam: 28, ism: 'Izzat', familya: 'Zokirov', tugulgan_kun: '27.03.2009' },
+    { raqam: 29, ism: 'Adizjon', familya: 'Sharipov ', tugulgan_kun: '02.07.2009' },
 ];
 
 // O'zbekiston vaqti bilan bugungi sana olish funksiyasi
-async function getUzbekistanDate() {
+async function getUzbekistanDate(useApi = false) {
     try {
-        const response = await fetch('https://timeapi.io/api/TimeZone/zone?timeZone=Asia/Tashkent');
-        const data = await response.json();
-        return new Date(data.currentLocalTime);
+        if (useApi) {
+            const response = await fetch('https://timeapi.io/api/TimeZone/zone?timeZone=Asia/Tashkent');
+            const data = await response.json();
+            return new Date(data.currentLocalTime);
+        } else {
+            const now = new Date();
+            return new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Tashkent' }));
+        }
     } catch (error) {
-        console.error('O\'zbekiston vaqtini olishda xatolik:', error);
+        console.error('Vaqtni olishda xatolik:', error);
         return new Date(); // Xatolik bo'lsa, joriy vaqtni qaytaradi
     }
 }
 
 // Tug'ilgan kunni keyingi yilga moslash, agar joriy yilda o'tgan bo'lsa
-async function calculateUpcomingBirthday(student) {
-    const uzbDate = await getUzbekistanDate();
+async function calculateUpcomingBirthday(student, useApi = false) {
+    const uzbDate = await getUzbekistanDate(useApi);
     const [day, month, year] = student.tugulgan_kun.split('.').map(Number);
     const birthDate = new Date(year, month - 1, day);
     const thisYear = uzbDate.getFullYear();
@@ -87,8 +93,8 @@ async function calculateUpcomingBirthday(student) {
 }
 
 // Har bir o'quvchi uchun yaqin tug'ilgan kunlarni hisoblash
-async function calculateAllUpcomingBirthdays() {
-    const upcomingBirthdays = await Promise.all(students.map(calculateUpcomingBirthday));
+async function calculateAllUpcomingBirthdays(useApi = false) {
+    const upcomingBirthdays = await Promise.all(students.map(student => calculateUpcomingBirthday(student, useApi)));
     upcomingBirthdays.sort((a, b) => a.daysLeft - b.daysLeft);
     return upcomingBirthdays;
 }
@@ -98,8 +104,8 @@ let currentIndex = 0;
 const studentInfoDiv = document.getElementById('student-info');
 
 // Ma'lumotlarni ekranga chiqarish funksiyasi
-async function displayStudent() {
-    const upcomingBirthdays = await calculateAllUpcomingBirthdays();
+async function displayStudent(useApi = false) {
+    const upcomingBirthdays = await calculateAllUpcomingBirthdays(useApi);
     const student = upcomingBirthdays[currentIndex];
 
     // Agar student ma'lumotlari bo'lmasa
@@ -121,9 +127,14 @@ async function displayStudent() {
     setTimeout(() => {
         studentInfoDiv.classList.remove('show');
         currentIndex = (currentIndex + 1) % upcomingBirthdays.length;
-        setTimeout(displayStudent, 1000); // Navbatdagi o'quvchi chiqishidan oldin kutish
+        setTimeout(() => displayStudent(useApi), 1000); // Navbatdagi o'quvchi chiqishidan oldin kutish
     }, 4500);
 }
 
 // Boshlanishi
 displayStudent();
+
+// 5 soniyadan keyin API ga o'tish
+setTimeout(() => {
+    displayStudent(true);
+}, 5000);
