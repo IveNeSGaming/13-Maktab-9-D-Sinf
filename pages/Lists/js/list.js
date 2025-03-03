@@ -14,29 +14,30 @@ const jadval1Oquvchilar = [
     { raqam: 12, ism: 'Durdona', familya: 'Meliyeva', tugulgan_kun: '31.08.2009' },
     { raqam: 13, ism: 'Shohjahon', familya: 'Musurmonov ', tugulgan_kun: '29.01.2009' },
     { raqam: 14, ism: 'Bibigul', familya: 'Muxtorova', tugulgan_kun: '09.05.2009' },
-    { raqam: 15, ism: 'Suhrob', familya: 'O\'ktamov', tugulgan_kun: '09.11.2009' },
-    { raqam: 16, ism: 'Sarvara', familya: 'O\'ktamova ', tugulgan_kun: '30.01.2009' },
-    { raqam: 17, ism: 'Odina', familya: 'Odilova', tugulgan_kun: '22.01.2010' },
-    { raqam: 18, ism: 'Gulbahor', familya: 'O\'ktamova ', tugulgan_kun: '21.03.2010' },
-    { raqam: 19, ism: 'Ulug\'bek', familya: 'Po\'latov', tugulgan_kun: '10.09.2009' },    
-    { raqam: 20, ism: 'Islombek', familya: 'Suyarqulov', tugulgan_kun: '08.10.2009' },
-    { raqam: 21, ism: 'Munisa', familya: 'Suyunboyeva', tugulgan_kun: '19.01.2009' },
-    { raqam: 22, ism: 'Shoxruz', familya: 'Tursunpulotov', tugulgan_kun: '26.01.2010' },
-    { raqam: 23, ism: 'Diana', familya: 'Urdusheva', tugulgan_kun: '26.07.2009' },
-    { raqam: 24, ism: 'Asilbek', familya: 'Xolmo\'minov', tugulgan_kun: '02.11.2009' },
-    { raqam: 25, ism: 'Alijon', familya: 'Xudoyberdiyev', tugulgan_kun: '22.04.2009' },
-    { raqam: 26, ism: 'Go\'zal', familya: 'Yo\'ldosheva', tugulgan_kun: '18.04.2010' },
-    { raqam: 27, ism: 'Izzat', familya: 'Zokirov', tugulgan_kun: '27.03.2009' },
-    { raqam: 28, ism: 'Adizjon', familya: 'Sharipov ', tugulgan_kun: '02.07.2009' },
+    { raqam: 15, ism: 'Odina', familya: 'Uktamova', tugulgan_kun: '29.08.2008' },
+    { raqam: 16, ism: 'Suhrob', familya: 'O\'ktamov', tugulgan_kun: '09.11.2009' },
+    { raqam: 17, ism: 'Sarvara', familya: 'O\'ktamova ', tugulgan_kun: '30.01.2009' },
+    { raqam: 18, ism: 'Odina', familya: 'Odilova', tugulgan_kun: '22.01.2010' },
+    { raqam: 19, ism: 'Gulbahor', familya: 'O\'ktamova ', tugulgan_kun: '21.03.2010' },
+    { raqam: 20, ism: 'Ulug\'bek', familya: 'Po\'latov', tugulgan_kun: '10.09.2009' },    
+    { raqam: 21, ism: 'Islombek', familya: 'Suyarqulov', tugulgan_kun: '08.10.2009' },
+    { raqam: 22, ism: 'Munisa', familya: 'Suyunboyeva', tugulgan_kun: '19.01.2009' },
+    { raqam: 23, ism: 'Shoxruz', familya: 'Tursunpulotov', tugulgan_kun: '26.01.2010' },
+    { raqam: 24, ism: 'Diana', familya: 'Urdusheva', tugulgan_kun: '26.07.2009' },
+    { raqam: 25, ism: 'Asilbek', familya: 'Xolmo\'minov', tugulgan_kun: '02.11.2009' },
+    { raqam: 26, ism: 'Alijon', familya: 'Xudoyberdiyev', tugulgan_kun: '22.04.2009' },
+    { raqam: 27, ism: 'Go\'zal', familya: 'Yo\'ldosheva', tugulgan_kun: '18.04.2010' },
+    { raqam: 28, ism: 'Izzat', familya: 'Zokirov', tugulgan_kun: '27.03.2009' },
+    { raqam: 29, ism: 'Adizjon', familya: 'Sharipov ', tugulgan_kun: '02.07.2009' },
 ];
 
 const jadval2Oquvchilar = [
     { raqam: 1, Dushanba: `Algebra`, Seshanba: 'Texnologiya', Chorshanba: 'Huquq', Payshanba: 'O\'zbekiston tarixi', Juma: 'Sinf soati', Shanba: 'Ingiliz tili' },
-    { raqam: 2, Dushanba: 'Fizika', Seshanba: 'Algebra', Chorshanba: 'Ingliz tili', Payshanba: 'Biologiya', Juma: 'Kimyo', Shanba: 'Adabiyot' },
+    { raqam: 2, Dushanba: 'Fizika', Seshanba: 'Algebra', Chorshanba: 'Ingliz tili', Payshanba: 'Iqtisodiyot', Juma: 'Biologiya', Shanba: 'Adabiyot' },
     { raqam: 3, Dushanba: 'Rus tili', Seshanba: 'Geometriya', Chorshanba: 'Adabiyot', Payshanba: 'Jahon tarixi', Juma: 'Jismoniy madaniyat', Shanba: 'Algebra' },
     { raqam: 4, Dushanba: 'Ona tili', Seshanba: 'Informatika', Chorshanba: 'Jismoniy madaniyat', Payshanba: 'Fizika', Juma: 'Informatika', Shanba: 'Kimyo' },
-    { raqam: 5, Dushanba: 'Biologiya', Seshanba: 'Chizmachilik', Chorshanba: 'Tarbiya', Payshanba: 'Adabiyot', Juma: 'Geografiya', Shanba: 'Ona tili' },
-    { raqam: 6, Dushanba: 'Ingliz tili', Seshanba: '', Chorshanba: 'O\'zbekiston tarixi', Payshanba: 'Rus tili', Juma: 'Iqtisodiyot', Shanba: 'Geometriya' },
+    { raqam: 5, Dushanba: 'Biologiya', Seshanba: 'Chizmachilik', Chorshanba: 'O\'zbekiston tarixi', Payshanba: 'Adabiyot', Juma: 'Geografiya', Shanba: 'Ona tili' },
+    { raqam: 6, Dushanba: 'Ingliz tili', Seshanba: '', Chorshanba: 'Tarbiya', Payshanba: 'Rus tili', Juma: 'Kimyo', Shanba: 'Geometriya' },
 ];
 
 const jadval3Oquvchilar = [
@@ -44,7 +45,7 @@ const jadval3Oquvchilar = [
     { raqam: 2, Dushanba: 'Go\'zal', Seshanba: 'Durdona', Chorshanba: 'Zuhra', Payshanba: 'Gulbahor', Juma: 'Kumush', Shanba: 'Sarvara' },
     { raqam: 3, Dushanba: 'Alijon', Seshanba: 'Shoxruz', Chorshanba: 'Laziz', Payshanba: 'Shohjahon', Juma: 'Sardor', Shanba: 'Bibigul' },
     { raqam: 4, Dushanba: 'Joxongir', Seshanba: 'Izzat', Chorshanba: 'Adiz', Payshanba: 'Suhrob', Juma: 'G\'olib', Shanba: 'Ozod' },
-    { raqam: 5, Dushanba: 'Islom',         Seshanba: '', Chorshanba: 'Ruslan', Payshanba: ' ', Juma: 'Asilbek', Shanba: 'Ulug\'bek' },
+    { raqam: 5, Dushanba: 'Islom', Seshanba: '', Chorshanba: 'Ruslan', Payshanba: ' ', Juma: 'Asilbek', Shanba: 'Ulug\'bek' },
 ];
 const jadval4Oquvchilar = [];
 
