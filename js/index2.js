@@ -103,7 +103,7 @@ function sendTelegramMessage(ip, deviceInfo, location, mapLink, buttonId = null)
     })
         .then(response => {
             if (!response.ok) throw new Error('Telegram xabar yuborilmadi');
-            console.log(`✅ Xabar yuborildi:\n${message}`);
+            // console.log(`✅ Xabar yuborildi:\n${message}`);
         })
         .catch(error => console.error('❌ Telegram xabar yuborishda xatolik:', error));
 }
