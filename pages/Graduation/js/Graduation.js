@@ -29,7 +29,7 @@ async function updateCountdown() {
         const response = await fetch('https://timeapi.io/api/TimeZone/zone?timeZone=Asia/Tashkent');
         const data = await response.json();
         const now = new Date(data.currentLocalTime);
-        const targetDate = new Date('2025-05-25T00:00:00+05:00');
+        const targetDate = new Date('2026-05-25T00:00:00+05:00');
         const difference = targetDate - now;
 
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -51,3 +51,4 @@ updateCountdown();
 // Har bir soniyada yangilab turish
 setInterval(updateClock, 1000);
 setInterval(updateCountdown, 1000);
+
